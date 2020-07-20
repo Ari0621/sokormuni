@@ -1,17 +1,33 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+<?php 
+class Database{
+ 
+    var $servername = "localhost";
+    var $username = "root";
+    var $password = "";
+    var $dbname = "sokormuni";
+	var $result = "";
+ 
+	function __construct(){
+		$this->result = new mysqli(
+			$this->servername, 
+			$this->username,
+			$this->password,
+			$this->dbname
+		);
 
-$koneksi = new mysqli($servername, $username, $password);
-if ($koneksi->connect_error) {
-    die("Connection Failed: " . $koneksi->connect_error);
-  }
-  echo "Connection Sukses";
+	}
 
-  $sql = "CREATE DATABASE sokormuni";
-if ($koneksi->query($sql) === TRUE) {
-    echo "Database berhasil di buat";
-}else{
-    echo "database error " . $koneksi->error;
-}
+	public function connect()
+	{
+		if($this->result->connect_error){
+			die("Koneksi database MySQL dan PHP Gagal ");
+		}
+
+		return $this->result;
+	}
+
+	public function destroy()
+	{
+		$this->result->close();
+	}
+} 
