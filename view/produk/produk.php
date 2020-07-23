@@ -12,7 +12,7 @@ require "./../../controller/controller_produk/produk/get_data_produk.php";
 <a href="add_products.html">Add New products</a><br/><br/>
     <table border="1">
     <tr>
-        <th>Id</th> <th>Name</th> <th>Created At</th> <th>Updated At</th> 
+        <th>Id</th> <th>Name</th> <th>Created At</th> <th>Material</th> <th>Color</th> <th>Size</th> <th>description</th> <th>created_at</th> <th>updated_at</th>
     </tr>
     <?php
     if ($result->num_rows > 0) {
@@ -22,6 +22,11 @@ require "./../../controller/controller_produk/produk/get_data_produk.php";
             <tr>
                 <td><?php echo $row['id'];?></td>
                 <td><?php echo $row['name'];?></td>
+                <td><?php echo $row['category_id'];?></td>
+                <td><?php echo $row['material'];?></td>
+                <td><?php echo $row['color'];?></td>
+                <td><?php echo $row['size'];?></td>
+                <td><?php echo $row['description'];?></td>
                 <td><?php echo $row['created_at'];?></td>
                 <td><?php echo $row['updated_at'];?></td>
                 <td><?php echo "<td><a href='./../../controller/controller_produk/produk/edit_produk.php?id=$row[id]'>Edit</a> | <a href='./../../controller/controller_produk/produk/delete_produk.php?id=$row[id]'>Delete</a></td></tr>";?></td>
