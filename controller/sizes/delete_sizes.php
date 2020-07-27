@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "./../../../config/connection.php";
+require_once "./../../config/Database.php";
 $db = new Database;
 $koneksi = $db->connect();
 $id = $_GET['id'];

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "./../../../config/connection.php";
+require_once "./../../config/Database.php";
 
 
 $db = new Database;
@@ -8,7 +8,7 @@ $koneksi = $db->connect();
 $Name           = $_POST['name'];
 $description       = $_POST['description'];
 $id             = $_POST['id'];
-$sql = "UPDATE sizes 
+$sql = "UPDATE materials 
         SET
         name     ='$Name',
         description ='$description'
@@ -16,7 +16,7 @@ $sql = "UPDATE sizes
         ";
 if ($koneksi->query($sql) === TRUE) {
     echo "updated berhasil";
-    header("Location:./../../../view/produk/sizes.php");
+    header("Location:./../../../view/produk/materials.php");
 }else{
     echo "Update Error: ". $koneksi->error;
 }

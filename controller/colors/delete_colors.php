@@ -1,18 +1,18 @@
 <?php
 session_start();
-require "./../../../config/connection.php";
+require_once "./../../config/Database.php";
 $db = new Database;
 $koneksi = $db->connect();
 $id = $_GET['id'];
 
 
-
-$sql = "DELETE FROM categories 
+//var_dump($_POST);
+$sql = "DELETE FROM colors 
         WHERE id='$id'
         ";
 if ($koneksi->query($sql) === TRUE) {
     echo "Delete berhasil";
-    header("Location:./../../../view/produk/kategori.php");
+    header("Location:./../../../view/produk/colors.php");
 }else{
     echo "Delete Error: ". $koneksi->error;
 }

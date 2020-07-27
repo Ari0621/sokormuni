@@ -1,20 +1,18 @@
 <?php
 session_start();
-require "./../../../config/connection.php";
+require_once "./../../config/Database.php";
 
 $db              = new Database;
 $koneksi         = $db->connect();
 $Name            = $_POST['name'];
-$description     = $_POST['description'];
 
 
-$sql = "INSERT INTO sizes SET 
-name        ='$Name',
-description ='$description'
+$sql = "INSERT INTO colors SET 
+name        ='$Name'
 ";
 if ($koneksi->query($sql) === TRUE) {
     echo "data berhasil di simpan";
-    header("Location:./../../../view/produk/sizes.php");
+    header("Location:./../../../view/produk/colors.php");
 }else{
     echo "Error: ". $koneksi->error;
 }
