@@ -4,4 +4,4 @@ require "././../../config/connection.php";
 $db         = new Database;
 $db_connect = $db->connect();
 $sql        = "SELECT * FROM colors";
-$result     = $db_connect->query($sql);
+$result_colors     = $db_connect->query($sql);

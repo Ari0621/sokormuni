@@ -6,10 +6,12 @@ $db              = new Database;
 $koneksi         = $db->connect();
 $Name            = $_POST['name'];
 $category_id     = $_POST['category_id'];
-$material        = $_POST['material'];
+$material        = implode(",", $_POST['material']);
 $color           = $_POST['color'];
 $size            = $_POST['size'];
 $description     = $_POST['description'];
+
+//var_dump($material);
 
 
 $sql = "INSERT INTO products SET 

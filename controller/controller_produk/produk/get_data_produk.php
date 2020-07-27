@@ -1,7 +1,7 @@
 <?php
 require "./../../config/connection.php";
 
-$db         = new Database;
+//$db         = new Database;
 $db_connect = $db->connect();
 // $query_categories   = "SELECT * FROM categories";
 // $query_materials       = "SELECT * FROM colors";
@@ -18,7 +18,7 @@ $db_connect = $db->connect();
 
 $sql        = "SELECT * FROM products";
 $result     = $db_connect->query($sql);
-
+$db->close();
 
 // $query_header = mysqli_query($conn, 'SELECT * FROM tabel_header');
 

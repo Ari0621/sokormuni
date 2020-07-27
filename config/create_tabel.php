@@ -5,14 +5,15 @@ $db = new Database;
 
 $koneksi = $db->connect();
 
-$sql = "CREATE TABLE detail_product (
+$sql = "CREATE TABLE add_stock(
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    product_id VARCHAR(30) NOT NULL,
-    -- category_id VARCHAR(30) NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total varchar(255) NOT NULL,
+    detail_product_id varchar(255) NOT NULL,
+    -- product_id VARCHAR(30) NOT NULL,
     -- material VARCHAR(30) DEFAULT NULL,
-    -- color  VARCHAR(30) DEFAULT NULL,
-    -- size VARCHAR(30) DEFAULT NULL,
     -- description VARCHAR(30) DEFAULT NULL,
+    -- stock VARCHAR(30) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at  DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
