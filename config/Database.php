@@ -3,7 +3,7 @@ class Database {
  
     var $servername = "localhost";
     var $username = "root";
-    var $password = "";
+    var $password = "nawawi932";
     var $dbname = "sokormuni";
 	var $result = "";
 
