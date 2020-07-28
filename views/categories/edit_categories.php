@@ -4,7 +4,7 @@ echo $id;
 require "./../../../config/Database.php";
 $db = new Database;
 $db_connect = $db->connect();
-$sql = "SELECT * FROM products WHERE id='$id'";
+$sql = "SELECT * FROM categories WHERE id='$id'";
 $result = $db_connect->query($sql);
 
 ?>

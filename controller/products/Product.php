@@ -15,11 +15,7 @@ class Product {
         $mysqli = $db->connect();
 
         // sql statement untuk mengambil semua data product
-<<<<<<< HEAD
-        $sql = "SELECT  products.id as product_id,
-=======
         $sql = "SELECT products.id as product_id,
->>>>>>> 4d76fedb2ce451938de7144beaf99bdb1460547d
                         products.name as product_name,
                         products.material as product_material,
                         products.color as product_color,

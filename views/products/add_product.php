@@ -8,19 +8,14 @@
 
     $materials = new Material();
     $list_material = $materials->view();
-<<<<<<< HEAD
 
     require "./../../controller/colors/Colors.php";
-
     $colors = new Colors();
     $list_colors = $colors->view();
 
     require "./../../controller/sizes/Sizes.php";
-
     $sizes = new Sizes();
     $list_sizes= $sizes->view();
-=======
->>>>>>> 4d76fedb2ce451938de7144beaf99bdb1460547d
 ?>
 <html>
 <body>
@@ -38,25 +33,13 @@
    <?php foreach ($list_material as $value) {?>
         <input type="checkbox" name="material[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
-<<<<<<< HEAD
-
-<br>Colors: 
+    <br>Colors: 
    <?php foreach ($list_colors as $value) {?>
-        <input type="checkbox" name="material[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
+        <input type="checkbox" name="color[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
-<br>
-<br>sizes: 
+    <br>Sizes: 
    <?php foreach ($list_sizes as $value) {?>
-        <input type="checkbox" name="material[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
+        <input type="checkbox" name="size[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
-<br>
-=======
-<br>
- <!-- 
-<?php foreach ($list_data as $value) {?>
-    color: <br><input type="checkbox" name="color" ><br>
-<?php } ?> -->
-    size: <br><input type="text" name="size" ><br>
->>>>>>> 4d76fedb2ce451938de7144beaf99bdb1460547d
     Description:<br><textarea class="form-control" rows="3" id="textarea" name="description"></textarea>
 <br><input type="submit" name="simpan">
