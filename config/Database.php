@@ -5,7 +5,6 @@ class Database {
     var $username = "root";
     var $password = "";
     var $dbname = "sokormuni";
-	var $result = "";
 
 	public function connect()
 	{
