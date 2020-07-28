@@ -9,13 +9,13 @@
     $materials = new Material();
     $list_material = $materials->view();
 
-    // require "./../../controller/colors/Colors.php";
-    // $colors = new Colors();
-    // $list_colors = $colors->view();
+    require "./../../controller/colors/Colors.php";
+    $colors = new Colors();
+    $list_colors = $colors->view();
 
-    // require "./../../controller/sizes/Sizes.php";
-    // $sizes = new Sizes();
-    // $list_sizes= $sizes->view();
+    require "./../../controller/sizes/Sizes.php";
+    $sizes = new Sizes();
+    $list_sizes= $sizes->view();
 ?>
 <html>
 <body>

@@ -30,7 +30,7 @@
                 <td><?php echo $row['name'];?></td>
                 <td><?php echo $row['created_at'];?></td>
                 <td><?php echo $row['updated_at'];?></td>
-                <td><a href='edit_categories.php?id=<?php echo $row["id"]; ?>'>Edit</a>
+                <td><a href='edit_colors.php?id=<?php echo $row["id"]; ?>'>Edit</a>
                  | 
                  <a href='delete_categories.php?id=<?php echo $row["id"]; ?>'>Delete</a>
                  </td>

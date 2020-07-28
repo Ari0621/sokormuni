@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<a href="add_categories.php">Add New Categories</a><br/><br/>
+<a href="add_materials.php">Add New Material</a><br/><br/>
     <table border="1">
     <tr>
         <th>No</th>
@@ -29,12 +29,12 @@
             <tr>
                 <td><?php echo $no++;?></td>
                 <td><?php echo $row['name'];?></td>
-                <td><?php echo $row['name'];?></td>
                 <td><?php echo $row['description'];?></td>
+                <td><?php echo $row['created_at'];?></td>
                 <td><?php echo $row['updated_at'];?></td>
-                <td><a href='edit_categories.php?id=$row[id]'>Edit</a>
+                <td><a href='edit_materials.php?id=<?php echo $row["id"]; ?>'>Edit</a>
                  | 
-                 <a href='delete_categories.php?id=<?php echo $row["id"]; ?>'>Delete</a>
+                 <a href='delete_materials.php?id=<?php echo $row["id"]; ?>'>Delete</a>
                  </td>
             </tr>
             <?php 

@@ -14,7 +14,7 @@ $sql = "UPDATE categories
         ";
 if ($koneksi->query($sql) === TRUE) {
     echo "updated berhasil";
-    // header("Location:./../../../view/produk/stock.php");
+    header("Location:index.php");
 }else{
     echo "Update Error: ". $koneksi->error;
 }

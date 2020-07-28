@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<a href="add_categories.php">Add New Categories</a><br/><br/>
+<a href="add_size.php">Add New Size</a><br/><br/>
     <table border="1">
     <tr>
         <th>No</th>
@@ -16,11 +16,11 @@
         <th>updated_at</th>
     </tr>
     <?php
-    require "./../../controller/categories/Category.php";
+    require "./../../controller/sizes/Sizes.php";
 
-    $category = new Category();
+    $sizes = new Sizes();
 
-    $result = $category->view();
+    $result = $sizes->view();
     $no = 1;
     
     if (!empty($result)) {
@@ -32,9 +32,9 @@
                 <td><?php echo $row['description'];?></td>
                 <td><?php echo $row['created_at'];?></td>
                 <td><?php echo $row['updated_at'];?></td>
-                <td><a href='edit_categories.php?id=$row[id]'>Edit</a>
+                <td><a href='edit_sizes.php?id=<?php echo $row["id"]; ?>'>Edit</a>
                  | 
-                 <a href='delete_categories.php?id=<?php echo $row["id"]; ?>'>Delete</a>
+                 <a href='delete_sizes.php?id=<?php echo $row["id"]; ?>'>Delete</a>
                  </td>
             </tr>
             <?php 

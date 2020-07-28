@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['id'];
 echo $id;
-require "./../../../config/Database.php";
+require "./../../config/Database.php";
 $db = new Database;
 $db_connect = $db->connect();
 $sql = "SELECT * FROM colors WHERE id='$id'";

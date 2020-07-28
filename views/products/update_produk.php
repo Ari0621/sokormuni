@@ -1,22 +1,29 @@
 <?php
 session_start();
-require "./../../../config/Database.php";
+require "./../../config/Database.php";
 
 
 $db = new Database;
 $koneksi = $db->connect();
-$Name           = $_POST['name'];
-$description       = $_POST['description'];
+$name            = $_POST['name'];
+$category_id     = $_POST['category_id'];
+$material        = implode(",", $_POST['material']);
+$color           = implode(",", $_POST['color']);
+$size            = implode(",", $_POST['size']);
+$description     = $_POST['description'];
 $id             = $_POST['id'];
-$sql = "UPDATE add_stock 
-        SET
-        name     ='$Name',
-        description ='$description'
-        WHERE id ='$id' 
+
+$sql = "UPDATE products SET  name= '$name',
+category_id    = '$category_id',
+material       = '$material',
+color          = '$color',
+size           = '$size',
+description    = '$description'
+WHERE id             = '$id' 
         ";
 if ($koneksi->query($sql) === TRUE) {
     echo "updated berhasil";
-    // header("Location:./../../../view/produk/stock.php");
+    header("index.php");
 }else{
     echo "Update Error: ". $koneksi->error;
 }
