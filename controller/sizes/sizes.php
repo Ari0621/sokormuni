@@ -30,10 +30,8 @@ class Sizes {
         return $hasil;
     }
 
-}
-
-/*  Method untuk menyimpan data ke tabel product */
-function insert($name) {
+    /*  Method untuk menyimpan data ke tabel product */
+    function insert($name) {
     // memanggil file Database.php
     require_once "./../../config/Database.php";
 
@@ -70,10 +68,10 @@ function insert($name) {
 
     // menutup koneksi database
     $mysqli->close();
-}
+    }
 
-/* Method untuk menampilkan data product berdasarkan nis */
-function get_sizes($id) {
+    /* Method untuk menampilkan data product berdasarkan nis */
+    function get_sizes($id) {
     // memanggil file Database.php
     require_once "./../../config/Database.php";
 
@@ -94,10 +92,10 @@ function get_sizes($id) {
     
     // nilai kembalian dalam bentuk array
     return $data;
-}
+    }
 
-/* Method untuk mengubah data pada tabel product */
-function update($name,$description) {
+    /* Method untuk mengubah data pada tabel product */
+    function update($name,$description) {
     // memanggil file Database.php
     require_once "./../../config/Database.php";
 
@@ -138,10 +136,10 @@ function update($name,$description) {
 
     // menutup koneksi database
     $mysqli->close();
-}
+    }
 
-/* Method untuk menghapus data pada tabel product */
-function delete($id) {
+    /* Method untuk menghapus data pada tabel product */
+    function delete($id) {
     // memanggil file Database.php
     require_once "./../../config/Database.php";
 
@@ -168,5 +166,9 @@ function delete($id) {
 
     // menutup koneksi database
     $mysqli->close();
+    }
+
 }
+
+
 ?>

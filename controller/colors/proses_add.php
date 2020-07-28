@@ -2,11 +2,11 @@
 require "Colors.php";
 
 if (isset($_POST['simpan'])){
-    $mame            = $_POST['name'];
+    $name            = $_POST['name'];
 
-    $colors = new Colors();
+    $color = new Colors();
 
-    $result = $colors->insert($name);
+    $result = $color->insert($name);
     
     if ($result) {
         header("Location:./../../view/colors/");

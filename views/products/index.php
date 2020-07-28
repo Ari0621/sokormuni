@@ -40,7 +40,7 @@
                 <td><?php echo $row['product_description'];?></td>
                 <td><?php echo $row['product_created_at'];?></td>
                 <td><?php echo $row['product_updated_at'];?></td>
-                <td><a href='edit_produk.php?id=$row[id]'>Edit</a>
+                <td><a href='edit_product.php?id=<?php echo $row["product_id"]; ?>'>Edit</a>
                  | 
                  <a href='delete_product.php?id=<?php echo $row["product_id"]; ?>'>Delete</a>
                  </td>

@@ -9,7 +9,7 @@ if (isset($_POST['simpan'])){
     $result = $category->insert($name);
     
     if ($result) {
-        header("Location:./../../view/categories/");
+        header("Location:./../../view/category/");
     }else{
         echo "Error: ";
     }
