@@ -16,7 +16,7 @@ class Product {
 
         // sql statement untuk mengambil semua data product
         $sql = "SELECT  products.id as product_id,
-                        products.category_id = products_category_id
+                        products.category_id as products_category_id,
                         products.name as product_name,
                         products.material as product_material,
                         products.color as product_color,
@@ -105,7 +105,19 @@ class Product {
         $mysqli = $db->connect();
 
         // sql statement untuk mengambil data product berdasarkan nis
-        $sql = "SELECT * FROM products WHERE id='$is'";
+        $sql = "SELECT products.id as product_id,
+                        products.category_id as products_category_id,
+                        products.name as product_name,
+                        products.material as product_material,
+                        products.color as product_color,
+                        products.size as product_size,
+                        products.description as product_description,
+                        products.created_at as product_created_at,
+                        products.updated_at as product_updated_at,
+                        categories.name as category_name
+        FROM products 
+        INNER JOIN categories ON categories.id = products.category_id
+        WHERE products.id ='$id'";
 
         $result = $mysqli->query($sql);
         $data   = $result->fetch_assoc();
@@ -118,7 +130,7 @@ class Product {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($name, $category_id, $material, $color, $size, $description) {
+    function update($id, $name, $category_id, $material, $color, $size, $description) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
 

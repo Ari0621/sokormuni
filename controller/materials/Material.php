@@ -95,7 +95,7 @@ class Material {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($name,$description) {
+    function update($id, $name, $description) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
     
