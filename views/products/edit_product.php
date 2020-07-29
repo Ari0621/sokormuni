@@ -35,9 +35,9 @@ foreach ($result as $key => $value) {
 <input type="hidden" name="id" value="<?php echo $id; ?>">
     Name: <br><input type="text" name="name" value="<?php echo $value['name']; ?>"><br>
     <br> category_id: <br>
-    <select name="category_id">
+    <select name="category_id" class="form-control">
     <?php foreach($list_category as $value) { ?>
-        <option value="<?php echo $value['id'] ?>"><?php echo $value['name'] ?></option>
+    <option value="<?php echo $value->id ?>" <?php $value->id === $order->products_category_id  ? "selected" : ""?>><?php $value->name ?></option>
     <?php } ?>
     </select>
     

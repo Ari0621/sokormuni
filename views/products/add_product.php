@@ -41,5 +41,5 @@
    <?php foreach ($list_sizes as $value) {?>
         <input type="checkbox" name="size[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
-    Description:<br><textarea class="form-control" rows="3" id="textarea" name="description"></textarea>
+    <br>Description:<br><textarea class="form-control" rows="3" id="textarea" name="description"></textarea>
 <br><input type="submit" name="simpan">

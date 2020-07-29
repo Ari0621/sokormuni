@@ -16,7 +16,7 @@ foreach ($result as $key => $value) {
 ?>
 <input type="hidden" name="id" value="<?php echo $id; ?>">
     Name: <br><input type="text" name="name" value="<?php echo $value['name']; ?>"><br>
-<input type="submit">
+<input type="submit" name="simpan">
 <?php } ?>
 </form>
 </body>

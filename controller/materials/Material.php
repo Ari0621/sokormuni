@@ -31,7 +31,7 @@ class Material {
     }
 
     /* Method untuk menyimpan data ke tabel product */
-    function insert($name) {
+    function insert($name, $description) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
     

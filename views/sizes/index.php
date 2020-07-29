@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<a href="add_size.php">Add New Size</a><br/><br/>
+<a href="add_sizes.php">Add New Size</a><br/><br/>
     <table border="1">
     <tr>
         <th>No</th>
