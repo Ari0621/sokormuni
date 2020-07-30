@@ -16,7 +16,7 @@
         <th>updated_at</th>
     </tr>
     <?php
-    require "./../../controller/stock/Stock.php";
+    require "./../../controller/detail_product/detail_product.php";
 
     $stock = new Stock();
 
