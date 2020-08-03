@@ -129,7 +129,7 @@ class Product {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($name, $category_id, $material, $color, $size, $description) {
+    function update($id, $name, $category_id, $material, $color, $size, $description) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
 

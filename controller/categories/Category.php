@@ -91,7 +91,7 @@ class Category {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($name) {
+    function update($name, $id) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
     

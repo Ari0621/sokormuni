@@ -7,7 +7,7 @@ $list_product = $products->view();
 <html>
 <body>
 <h3>stock</h3>
-<form action="./../../controller/stock/proses_add.php" method="post">
+<form action="./../../controller/detail_product/proses_add.php" method="post">
 <br> Nama Product: <br>
     <select name="product_id">
     <?php foreach($list_product as $value) { ?>

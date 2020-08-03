@@ -1,3 +1,4 @@
+
 <?php
 $id = $_GET['id'];
 
@@ -24,7 +25,7 @@ $list_sizes= $sizes->view()
 <html>
 
 <body>
-    <form action="update_produk.php" method="post">
+    <form action="./../../controller/products/proses_update.php" method="post">
 
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         Name: <br><input type="text" name="name" value="<?php echo $product['product_name']; ?>"><br>
@@ -54,12 +55,37 @@ $list_sizes= $sizes->view()
         <?php } ?>
 
         <br>Colors:
-        <?php foreach ($list_colors as $value) {?>
-        <input type="checkbox" name="color[]" value="<?php echo $product['product_name']?>"><?php echo $product['product_name']?>
+        <?php foreach ($list_colors as $value) {
+            ?>
+        <input type="checkbox" name="color[]" value="<?php echo $value['name']?>" 
+        <?php 
+            $material = explode(",", $product['product_color']);
+            foreach ($material as $valueChecked){
+                switch ($valueChecked) {
+                    case $value['name']:
+                        echo ($value['name'] === $valueChecked) ? "checked":"";
+                        break;
+                    
+                }
+            }
+        ?>> <?php echo $value['name']?>
         <?php } ?>
+
         <br>Sizes:
-        <?php foreach ($list_sizes as $value) {?>
-        <input type="checkbox" name="size[]" value="<?php echo $product['product_name']?>"><?php echo $product['product_name']?>
+        <?php foreach ($list_sizes as $value) {
+            ?>
+        <input type="checkbox" name="size[]" value="<?php echo $value['name']?>" 
+        <?php 
+            $material = explode(",", $product['product_size']);
+            foreach ($material as $valueChecked){
+                switch ($valueChecked) {
+                    case $value['name']:
+                        echo ($value['name'] === $valueChecked) ? "checked":"";
+                        break;
+                    
+                }
+            }
+        ?>> <?php echo $value['name']?>
         <?php } ?>
         <br>Description:<br><textarea class="form-control" rows="3" id="textarea"
             name="description"><?php echo $product['product_description']; ?></textarea>

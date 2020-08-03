@@ -43,6 +43,8 @@
                 <td><a href='edit_product.php?id=<?php echo $row["product_id"]; ?>'>Edit</a>
                  | 
                  <a href='delete_product.php?id=<?php echo $row["product_id"]; ?>'>Delete</a>
+                 | 
+                 <a href='add_stock.php?id=<?php echo $row["id"]; ?>'>add stock</a>
                  </td>
             </tr>
             <?php 

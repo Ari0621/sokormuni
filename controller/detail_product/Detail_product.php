@@ -1,7 +1,7 @@
 <?php
         
 /* class product */
-class Material {
+class Stock {
 
     /* method untuk menampilkan data product */
     function view() {
@@ -15,7 +15,15 @@ class Material {
         $mysqli = $db->connect();
 
         // sql statement untuk mengambil semua data product
-        $sql = "SELECT * FROM materials ORDER BY created_at DESC";
+        $sql = "SELECT  detail.id as detail_id,
+                        detail.product_id as detail_product_id,
+                        detail.stock as detail_stock,
+                        detail.created_at as detail_created_at,
+                        detail.updated_at as detail_updated_at,
+                        -- products.name as products_name
+                        FROM detail 
+        INNER JOIN products ON products.name = detail.product_name 
+        ORDER BY detail.created_at DESC";
 
         $result = $mysqli->query($sql);
 
@@ -31,62 +39,70 @@ class Material {
     }
 
     /* Method untuk menyimpan data ke tabel product */
-    function insert($name, $description) {
+    function insert($product, $ju_stock) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
-    
+
         // membuat objek db dengan nama $db
         $db = new Database();
-    
+
         // membuka koneksi ke database
         $mysqli = $db->connect();
-    
-        $name           = $mysqli->real_escape_string($name);
-        $description    = $mysqli->real_escape_string($description);    
-    
+
+        $product           = $mysqli->real_escape_string($product);
+        $ju_stock          = $mysqli->real_escape_string($ju_stock);
+
+
         // sql statement untuk insert data product
-        $sql = "INSERT INTO materials (
-                    name,
-                    description
+        $sql = "INSERT INTO detail (
+                    product_id,
+                    stock
                 ) VALUES (
-                    '$name',
-                    '$description'
-    
+                    '$product',
+                    '$ju_stock'
                 )";
-    
+
         $result = $mysqli->query($sql);
-    
+
         // cek hasil query
         if($result){
             /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 2 */
-            header("Location: ./../../views/materials/");
+            header("Location: ./../../views/stock/?alert=2");
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */
-            header("Location: ./../../views/materials/add_materials.php");
+            header("Location: ./../../views/stock/?alert=1");
         }
-    
+
         // menutup koneksi database
         $mysqli->close();
     }
-    
+
     /* Method untuk menampilkan data product berdasarkan nis */
-    function get_materials($id) {
+    function get_product($id) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
-    
+
         // membuat objek db dengan nama $db
         $db = new Database();
-    
+
         // membuka koneksi ke database
         $mysqli = $db->connect();
-    
+
         // sql statement untuk mengambil data product berdasarkan nis
-        $sql = "SELECT * FROM materials WHERE id='$id'";
-    
+        $sql = "SELECT  detail.id as detail_id,
+                        detail.product_id as detail_product_id,
+                        detail.stock as detail_stock,
+                        detail.created_at as detail_created_at,
+                        detail.updated_at as detail_updated_at,
+                        products.name as products_name
+                        FROM detail 
+        INNER JOIN products ON products.id = detail.product_id 
+        ORDER BY detail.created_at DESC";
+
         $result = $mysqli->query($sql);
         $data   = $result->fetch_assoc();
-    
+
         // menutup koneksi database
         $mysqli->close();
         
@@ -95,45 +111,46 @@ class Material {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($id, $name, $description) {
+    function update($id, $name, $category_id, $material, $color, $size, $description) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
-    
+
         // membuat objek db dengan nama $db
         $db = new Database();
-    
+
         // membuka koneksi ke database
         $mysqli = $db->connect();
-    
-        $name           = $mysqli->real_escape_string($name);
-        $description    = $mysqli->real_escape_string($description);
-    
+
+        $product           = $mysqli->real_escape_string($product);
+        $ju_stock          = $mysqli->real_escape_string($ju_stock);
+
+
         // sql statement untuk update data product
-        $sql = "INSERT INTO materials (
-                    name,
-                    description
-                ) VALUES (
-                    '$name',
-                    '$description'
-                )";
-    
+        $sql = "INSERT INTO detail (
+            product_id,
+            stock
+        ) VALUES (
+            '$product',
+            '$ju_stock'
+        )";
+
         // sql statement untuk update data product
-        $sql = "UPDATE materials SET  name           = '$name',
-                                      description    = '$description'  
-                                      WHERE id       = '$id'"; 
-    
+        $sql = "UPDATE detail SET  product_id           = '$product',
+                                    stock                 = '$stock'
+                              WHERE id             = '$id'"; 
+
         $result = $mysqli->query($sql);
-    
+
         // cek hasil query
         if($result){
             /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 3 */
-            header("Location: ./../../views/materials/?alert=3");
+            header("Location: ./../../views/stock/?alert=3");
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */
-            header("Location: ./../../views/materials/?alert=1");
+            header("Location: ./../../views/stock/?alert=1");
         }
-    
+
         // menutup koneksi database
         $mysqli->close();
     }
@@ -142,31 +159,30 @@ class Material {
     function delete($id) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
-    
+
         // membuat objek db dengan nama $db
         $db = new Database();
-    
+
         // membuka koneksi ke database
         $mysqli = $db->connect();
-    
+
         // sql statement untuk delete data product
-        $sql = "DELETE FROM materials WHERE id = '$id'";
-    
+        $sql = "DELETE FROM detail WHERE id = '$id'";
+
         $result = $mysqli->query($sql);
-    
+
         // cek hasil query
         if($result){
             /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 4 */
-            header("Location: ./../../views/materials/?alert=4");
+            header("Location: ./../../views/stock/?alert=4");
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */
-            header("Location: ./../../views/materials/?alert=1");
+            header("Location: ./../../views/stock/?alert=1");
         }
-    
+
         // menutup koneksi database
         $mysqli->close();
     }
 }
-
 ?>
