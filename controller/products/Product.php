@@ -78,11 +78,10 @@ class Product {
                 )";
 
         $result = $mysqli->query($sql);
-
+                 
         // cek hasil query
         if($result){
-            /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 2 */
-            header("Location: ./../../views/products/?alert=2");
+            return $mysqli->insert_id;
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */

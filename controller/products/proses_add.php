@@ -11,11 +11,11 @@ if (isset($_POST['simpan'])){
 
     $product = new Product();
 
-    $result = $product->insert($name, $category_id, $material, $color, $size, $description);
-    
-    if ($result) {
-        header("Location:./../../view/products/");
-    }else{
-        echo "Error: ";
-    }
+    $last_id = $product->insert($name, $category_id, $material, $color, $size, $description);
+    echo $last_id;
+    // if ($result) {
+    //     header("Location:./../../view/products/");
+    // }else{
+    //     echo "Error: ";
+    // }
 }
