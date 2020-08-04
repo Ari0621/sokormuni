@@ -11,7 +11,7 @@ $list_product = $products->view();
 <br> Nama Product: <br>
     <select name="product_id">
     <?php foreach($list_product as $value) { ?>
-        <option value="<?php echo $value['id'] ?>"><?php echo $value['product_name'] ?></option>
+        <option value="<?php echo $value['$last_id'] ?>"><?php echo $value['product_name'] ?></option>
     <?php } ?>
     </select>
 <br>Stock:<br> <input type="number" name="stock"/><br>

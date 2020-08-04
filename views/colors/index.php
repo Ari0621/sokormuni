@@ -32,7 +32,7 @@
                 <td><?php echo $row['updated_at'];?></td>
                 <td><a href='edit_colors.php?id=<?php echo $row["id"]; ?>'>Edit</a>
                  | 
-                 <a href='delete_categories.php?id=<?php echo $row["id"]; ?>'>Delete</a>
+                 <a href='delete_colors.php?id=<?php echo $row["id"]; ?>'>Delete</a>
                  </td>
             </tr>
             <?php 

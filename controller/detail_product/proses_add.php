@@ -1,11 +1,11 @@
 <?php
-require "Stock.php";
+require "Detail_product.php";
 
 if (isset($_POST['simpan'])){
-    $product            = implode(",", $_POST['product_id']);
+    $product      = $_POST['product_id'];
     $ju_stock     = $_POST['stock'];
 
-    $stock = new Stock();
+    $stock = new Detail();
 
     $result = $stock->insert($product, $ju_stock);
     

@@ -1,6 +1,6 @@
 <?php
 // memanggil file Product.php
-require "./../../controller/categories/Colors.php";
+require "./../../controller/colors/Colors.php";
 
 if (isset($_GET['id'])) {
     // membuat objek Product

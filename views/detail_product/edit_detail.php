@@ -2,8 +2,8 @@
 $id = $_GET['id'];
 
 require "./../../controller/detail_product/Detail_product.php";
-$stock = new Stock();
-$list_stock = $stock->get_stock($id);
+$stock = new Detail();
+$list_stock = $stock->get_product($id);
 
 require "./../../controller/products/Product.php";
 $products = new Product();

@@ -1,10 +1,10 @@
 <?php
 // memanggil file Product.php
-require "./../../controller/detail_product/Detail_product.php";
+require "./../../controller/products/Detail_product.php";
 
 if (isset($_GET['id'])) {
     // membuat objek Product
-    $Stock = new Stock();
+    $Stock = new Detail();
 
 	$id = $_GET['id'];
 

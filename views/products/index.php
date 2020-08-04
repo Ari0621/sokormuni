@@ -44,7 +44,9 @@
                  | 
                  <a href='delete_product.php?id=<?php echo $row["product_id"]; ?>'>Delete</a>
                  | 
-                 <a href='add_stock.php?id=<?php echo $row["id"]; ?>'>add stock</a>
+                 <a href='add_stock.php?id=<?php echo $row["id"]; ?>'>Add stock</a>
+                 | 
+                 <a href='detail.php?id=<?php echo $row["id"]; ?>'>Detail</a>
                  </td>
             </tr>
             <?php 

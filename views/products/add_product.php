@@ -22,24 +22,25 @@
 <h3>PRODUK</h3>
 <form action="./../../controller/products/proses_add.php" method="post">
     Name: <br><input type="text" name="name" ><br>
-    <br> category_id: <br>
+    <br> Category: <br>
     <select name="category_id">
-    <?php foreach($list_category as $value) { ?>
+    <br><?php foreach($list_category as $value) { ?>
         <option value="<?php echo $value['id'] ?>"><?php echo $value['name'] ?></option>
     <?php } ?>
     </select>
     
-    <br>material: 
-   <?php foreach ($list_material as $value) {?>
+    <br>Material: 
+   <br><?php foreach ($list_material as $value) {?>
         <input type="checkbox" name="material[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
     <br>Colors: 
-   <?php foreach ($list_colors as $value) {?>
+   <br><?php foreach ($list_colors as $value) {?>
         <input type="checkbox" name="color[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
     <br>Sizes: 
-   <?php foreach ($list_sizes as $value) {?>
+   <br><?php foreach ($list_sizes as $value) {?>
         <input type="checkbox" name="size[]" value="<?php echo $value['name']?>"><?php echo $value['name']?>
     <?php } ?>
+    <br>Stock:<br> <input type="number" name="stock"/><br>
     <br>Description:<br><textarea class="form-control" rows="3" id="textarea" name="description"></textarea>
 <br><input type="submit" name="simpan">
