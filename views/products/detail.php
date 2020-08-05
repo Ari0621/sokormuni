@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php $id = $_GET['id']; ?>
+<!-- <?php $id = $_GET['id']; ?> -->
  <html lang="en">
 <head>
     <meta charset="UTF-8">

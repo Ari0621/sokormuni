@@ -46,7 +46,7 @@
                  | 
                  <a href='add_stock.php?id=<?php echo $row["id"]; ?>'>Add stock</a>
                  | 
-                 <a href='detail.php?id=<?php echo $row["id"]; ?>'>Detail</a>
+                 <a href='detail.php'>Detail</a>
                  </td>
             </tr>
             <?php 

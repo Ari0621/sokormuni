@@ -63,11 +63,11 @@ class Detail {
         // cek hasil query
         if($result){
             /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 2 */
-            header("Location: ./../../views/product/?alert=2");
+            header("Location: ./../../views/products/?alert=2");
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */
-            header("Location: ./../../views/product/?alert=1");
+            header("Location: ./../../views/products/?alert=1");
         }
 
         // menutup koneksi database
@@ -136,11 +136,11 @@ class Detail {
         // cek hasil query
         if($result){
             /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 3 */
-            header("Location: ./../../views/detail_product/?alert=3");
+            header("Location: ./../../views/detail_products/?alert=3");
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */
-            header("Location: ./../../views/detail_product/?alert=1");
+            header("Location: ./../../views/detail_products/?alert=1");
         }
 
         // menutup koneksi database
@@ -166,11 +166,11 @@ class Detail {
         // cek hasil query
         if($result){
             /* jika data berhasil disimpan alihkan ke halaman product dan tampilkan pesan = 4 */
-            header("Location: ./../../views/detail_product/?alert=4");
+            header("Location: ./../../views/detail_products/?alert=4");
         }
         else{
             /* jika data gagal disimpan alihkan ke halaman product dan tampilkan pesan = 1 */
-            header("Location: ./../../views/detail_product/?alert=1");
+            header("Location: ./../../views/detail_products/?alert=1");
         }
 
         // menutup koneksi database
