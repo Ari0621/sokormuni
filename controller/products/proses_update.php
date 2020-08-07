@@ -9,10 +9,11 @@ if (isset($_POST['simpan'])){
     $size            = implode(",", $_POST['size']);
     $description     = $_POST['description'];
     $id              = $_POST['id'];
+    $stock           = $_POST['stock'];
 
     $product = new Product();
 
-    $result = $product->update($id, $name, $category_id, $material, $color, $size, $description);
+    $result = $product->update($id, $name, $category_id, $material, $color, $size, $stock, $description);
     
     if ($result) {
         header("Location:./../../view/products/");

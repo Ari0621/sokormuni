@@ -6,12 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-<a href="add_stock.php">Add New Stok</a><br/><br/>
+<a href="index.php">product</a><br/><br/>
     <table border="1">
     <tr>
         <th>No</th>
-        <th>Nama Product</th>
-        <th>Stock</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Id produk</th>
         <th>created_at</th> 
         <th>updated_at</th>
     </tr>
@@ -28,15 +29,14 @@
             ?>
             <tr>
                 <td><?php echo $no++;?></td>
-                <td><?php echo $row['detail_product_id'];?></td>
-                <td><?php echo $row['detail_stock'];?></td>
-                <td><?php echo $row['detail_created_at'];?></td>
-                <td><?php echo $row['detail_updated_at'];?></td>
+                <td><?php echo $row['date'];?></td>
+                <td><?php echo $row['total'];?></td>
+                <td><?php echo $row['product_id'];?></td>
+                <td><?php echo $row['created_at'];?></td>
+                <td><?php echo $row['updated_at'];?></td>
                 <td><a href='edit_stock.php?id=<?php echo $row["id"]; ?>'>Edit</a>
                  | 
                  <a href='delete_stock.php?id=<?php echo $row["id"]; ?>'>Delete</a>
-                 | 
-                 <a href='delete_stock.php?id=<?php echo $row["id"]; ?>'>add stock</a>
                  </td>
             </tr>
             <?php 

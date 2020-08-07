@@ -87,6 +87,7 @@ $list_sizes= $sizes->view()
             }
         ?>> <?php echo $value['name']?>
         <?php } ?>
+        <br>Stock:<br> <input type="number" name="stock" value="<?php echo $product['product_stock']; ?>"><br>
         <br>Description:<br><textarea class="form-control" rows="3" id="textarea"
             name="description"><?php echo $product['product_description']; ?></textarea>
         <br><input type="submit" name="simpan">

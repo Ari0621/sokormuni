@@ -1,7 +1,7 @@
 <?php
         
 /* class product */
-class Product {
+class Coba {
 
     /* method untuk menampilkan data product */
     function view() {
@@ -134,7 +134,7 @@ class Product {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($id, $name, $category_id, $material, $color, $size, $stock, $description) {
+    function update($id, $stock) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
 
@@ -144,41 +144,18 @@ class Product {
         // membuka koneksi ke database
         $mysqli = $db->connect();
 
-        $name           = $mysqli->real_escape_string($name);
-        $category_id    = $mysqli->real_escape_string($category_id);
-        $material       = $mysqli->real_escape_string($material);
-        $color          = $mysqli->real_escape_string($color);
-        $size           = $mysqli->real_escape_string($size);
         $stock           = $mysqli->real_escape_string($stock);
-        $description    = $mysqli->real_escape_string($description);
 
         // sql statement untuk update data product
         $sql = "INSERT INTO products (
                     name,
-                    category_id,
-                    material,
-                    color,
-                    size,
-                    stock,
-                    description
+                    stock
                 ) VALUES (
-                    '$name',
-                    '$category_id',
-                    '$material',
-                    '$color',
-                    '$size',
-                    '$stock',
-                    '$description'
+                    '$stock'
                 )";
 
         // sql statement untuk update data product
-        $sql = "UPDATE products SET  name           = '$name',
-                                    category_id    = '$category_id',
-                                    material       = '$material',
-                                    color          = '$color',
-                                    size           = '$size',
-                                    stock          = '$stock',
-                                    description    = '$description'
+        $sql = "UPDATE products SET  stock         = '$stock'
                               WHERE id             = '$id'"; 
 
         $result = $mysqli->query($sql);

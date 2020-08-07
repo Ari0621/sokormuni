@@ -15,6 +15,7 @@
         <th>Material</th> 
         <th>Color</th> 
         <th>Size</th> 
+        <th>Stock</th>
         <th>description</th> 
         <th>created_at</th> 
         <th>updated_at</th>
@@ -37,6 +38,7 @@
                 <td><?php echo $row['product_material'];?></td>
                 <td><?php echo $row['product_color'];?></td>
                 <td><?php echo $row['product_size'];?></td>
+                <td><?php echo $row['product_stock'];?></td>
                 <td><?php echo $row['product_description'];?></td>
                 <td><?php echo $row['product_created_at'];?></td>
                 <td><?php echo $row['product_updated_at'];?></td>
@@ -44,9 +46,7 @@
                  | 
                  <a href='delete_product.php?id=<?php echo $row["product_id"]; ?>'>Delete</a>
                  | 
-                 <a href='add_stock.php?id=<?php echo $row["id"]; ?>'>Add stock</a>
-                 | 
-                 <a href='detail.php'>Detail</a>
+                 <a href='add_stock.php?id=<?php echo $row["product_id"]; ?>'>Add stock</a>
                  </td>
             </tr>
             <?php 

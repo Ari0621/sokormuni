@@ -13,18 +13,18 @@ if (isset($_POST['simpan'])){
 
     $product = new Product();
 
-    $last_id = $product->insert($name, $category_id, $material, $color, $size, $description);
+    $last_id = $product->insert($name, $category_id, $material, $color, $size, $stock, $description);
     //echo $last_id;
     
-    $detail_product = new Detail();
+    // $detail_product = new Detail();
 
-    $result = $detail_product->insert($last_id, $name, $stock);
-
-
+    // $result = $detail_product->insert($last_id, $name, $stock);
 
 
-    if ($result) {
-        header("Location:./../../view/products/");
+
+
+    if ($last_id) {
+        header("Location:./../../views/products/");
     }else{
         echo "Error: ";
     }

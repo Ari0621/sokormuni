@@ -1,51 +1,31 @@
-<!DOCTYPE html>
-<!-- <?php $id = $_GET['id']; ?> -->
- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<a href="add_detail.php">Add New Stok</a><br/><br/>
-    <table border="1">
-    <tr>
-        <th>No</th>
-        <th>Product Id</th>
-        <th>Nama Product</th>
-        <th>Stock</th>
-        <th>created_at</th> 
-        <th>updated_at</th>
-    </tr>
-    <?php
-    require "./../../controller/products/detail_product.php";
 
-    $stock = new Detail();
+<?php
+$id = $_GET['id'];
 
-    $result = $stock->view();
-    $no = 1;
-    
-    if (!empty($result)) {
-        foreach ($result as $row) {
-            ?>
-            <tr>
-                <td><?php echo $no++;?></td>
-                <td><?php echo $row['product_id'];?></td>
-                <td><?php echo $row['nama'];?></td>
-                <td><?php echo $row['stock'];?></td>
-                <td><?php echo $row['created_at'];?></td>
-                <td><?php echo $row['updated_at'];?></td>
-                <td><a href='edit_detail.php?id=<?php echo $row["id"]; ?>'>Edit</a>
-                 | 
-                 <a href='delete_detail.php?id=<?php echo $row["id"]; ?>'>Delete</a>
-                 </td>
-            </tr>
-            <?php 
-            }
-    }else{
-        echo "data 0";
-    }
-    ?>
-    </table>
+require "./../../controller/products/Product.php";
+$products = new Product();
+$product = $products->get_product($id);
+$result = $products->view();
+print_r ($product);
+// require "./../../controller/categories/Category.php";
+// $categories = new Category();
+// $list_category = $categories->view();
+
+// require "./../../controller/materials/Material.php";
+// $materials = new Material();
+// $list_material = $materials->view();
+
+// require "./../../controller/colors/Colors.php";
+// $colors = new Colors();
+// $list_colors = $colors->view();
+
+// require "./../../controller/sizes/Sizes.php";
+// $sizes = new Sizes();
+// $list_sizes= $sizes->view()
+// ?>
+
+
+    </form>
 </body>
+
 </html>
