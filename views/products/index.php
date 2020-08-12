@@ -17,6 +17,7 @@
         <th>Size</th> 
         <th>Stock</th>
         <th>description</th> 
+        <th>gambar</th> 
         <th>created_at</th> 
         <th>updated_at</th>
     </tr>
@@ -40,6 +41,7 @@
                 <td><?php echo $row['product_size'];?></td>
                 <td><?php echo $row['product_stock'];?></td>
                 <td><?php echo $row['product_description'];?></td>
+                <td><?php echo "<img src='./../../Image/".$row['products_image']."' width='100' height='100'></td>";?></td>
                 <td><?php echo $row['product_created_at'];?></td>
                 <td><?php echo $row['product_updated_at'];?></td>
                 <td><a href='edit_product.php?id=<?php echo $row["product_id"]; ?>'>Edit</a>

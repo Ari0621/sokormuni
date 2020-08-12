@@ -20,7 +20,7 @@
 <html>
 <body>
 <h3>PRODUK</h3>
-<form action="./../../controller/products/proses_add.php" method="post">
+<form action="./../../controller/products/proses_add.php" method="post" enctype="multipart/form-data">
     Name: <br><input type="text" name="name" ><br>
     <br> Category: <br>
     <select name="category_id">
@@ -43,4 +43,7 @@
     <?php } ?>
     <br>Stock:<br> <input type="number" name="stock"/><br>
     <br>Description:<br><textarea class="form-control" rows="3" id="textarea" name="description"></textarea>
+    <br>Foto</br><input type="file" name="foto">
+    <br>
 <br><input type="submit" name="simpan">
+</form>

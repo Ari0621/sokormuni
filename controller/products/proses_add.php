@@ -10,10 +10,26 @@ if (isset($_POST['simpan'])){
     $size            = implode(",", $_POST['size']);
     $description     = $_POST['description'];
     $stock           = $_POST['stock'];
+    $foto            = $_FILES['foto']['name'];
+    $tmp             = $_FILES['foto']['tmp_name'];
 
-    $product = new Product();
+    $fotobaru = date('dmYHis').$foto;
+    
+    $path = "./../../Image/".$fotobaru;
 
-    $last_id = $product->insert($name, $category_id, $material, $color, $size, $stock, $description);
+
+    if(move_uploaded_file($tmp, $path)){
+
+        $product = new Product();
+
+        $last_id = $product->insert($name, $category_id, $material, $color, $size, $stock, $description, $fotobaru);
+
+        }else{
+            echo "Maaf, Gambar gagal untuk di upload.";
+        }
+    
+
+    
     //echo $last_id;
     
     // $detail_product = new Detail();

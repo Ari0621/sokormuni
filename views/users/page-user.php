@@ -6,6 +6,7 @@ if(!isset($_SESSION['username'])){
 if($_SESSION['level']!="User"){
     die("Anda bukan User");
 }
+// print_r ($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">

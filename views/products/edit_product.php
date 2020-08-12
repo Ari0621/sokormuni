@@ -25,7 +25,7 @@ $list_sizes= $sizes->view()
 <html>
 
 <body>
-    <form action="./../../controller/products/proses_update.php" method="post">
+    <form action="./../../controller/products/proses_update.php" method="post" enctype="multipart/form-data" >
 
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         Name: <br><input type="text" name="name" value="<?php echo $product['product_name']; ?>"><br>
@@ -90,6 +90,8 @@ $list_sizes= $sizes->view()
         <br>Stock:<br> <input type="number" name="stock" value="<?php echo $product['product_stock']; ?>"><br>
         <br>Description:<br><textarea class="form-control" rows="3" id="textarea"
             name="description"><?php echo $product['product_description']; ?></textarea>
+         <br>Foto</br><input type="file" name="foto">
+         <br>
         <br><input type="submit" name="simpan">
 
     </form>

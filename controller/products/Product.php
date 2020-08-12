@@ -23,6 +23,7 @@ class Product {
                         products.size as product_size,
                         products.stock as product_stock,
                         products.description as product_description,
+                        products.image as products_image,
                         products.created_at as product_created_at,
                         products.updated_at as product_updated_at,
                         categories.name as category_name
@@ -44,7 +45,7 @@ class Product {
     }
 
     /* Method untuk menyimpan data ke tabel product */
-    function insert($name, $category_id, $material, $color, $size,$stock, $description) {
+    function insert($name, $category_id, $material, $color, $size,$stock, $description, $fotobaru ) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
 
@@ -59,9 +60,9 @@ class Product {
         $material       = $mysqli->real_escape_string($material);
         $color          = $mysqli->real_escape_string($color);
         $size           = $mysqli->real_escape_string($size);
-        $stock           = $mysqli->real_escape_string($stock);
+        $stock          = $mysqli->real_escape_string($stock);
         $description    = $mysqli->real_escape_string($description);
-
+        $fotobaru       = $mysqli->real_escape_string($fotobaru);
         // sql statement untuk insert data product
         $sql = "INSERT INTO products (
                     name,
@@ -70,7 +71,8 @@ class Product {
                     color,
                     size,
                     stock,
-                    description
+                    description,
+                    image
                 ) VALUES (
                     '$name',
                     '$category_id',
@@ -78,7 +80,8 @@ class Product {
                     '$color',
                     '$size',
                     '$stock',
-                    '$description'
+                    '$description',
+                    '$fotobaru '
                 )";
 
         $result = $mysqli->query($sql);
@@ -116,6 +119,7 @@ class Product {
                         products.size as product_size,
                         products.stock as product_stock,
                         products.description as product_description,
+                        products.image as products_image,
                         products.created_at as product_created_at,
                         products.updated_at as product_updated_at,
                         categories.name as category_name
@@ -134,7 +138,7 @@ class Product {
     }
     
     /* Method untuk mengubah data pada tabel product */
-    function update($id, $name, $category_id, $material, $color, $size, $stock, $description) {
+    function update($id, $name, $category_id, $material, $color, $size, $stock, $description, $fotobaru) {
         // memanggil file Database.php
         require_once "./../../config/Database.php";
 
@@ -151,6 +155,7 @@ class Product {
         $size           = $mysqli->real_escape_string($size);
         $stock           = $mysqli->real_escape_string($stock);
         $description    = $mysqli->real_escape_string($description);
+        $fotobaru       = $mysqli->real_escape_string($fotobaru);
 
         // sql statement untuk update data product
         $sql = "INSERT INTO products (
@@ -160,7 +165,8 @@ class Product {
                     color,
                     size,
                     stock,
-                    description
+                    description,
+                    image
                 ) VALUES (
                     '$name',
                     '$category_id',
@@ -168,7 +174,8 @@ class Product {
                     '$color',
                     '$size',
                     '$stock',
-                    '$description'
+                    '$description',
+                    $fotobaru
                 )";
 
         // sql statement untuk update data product
@@ -178,7 +185,8 @@ class Product {
                                     color          = '$color',
                                     size           = '$size',
                                     stock          = '$stock',
-                                    description    = '$description'
+                                    description    = '$description',
+                                    image          = '$fotobaru'
                               WHERE id             = '$id'"; 
 
         $result = $mysqli->query($sql);
