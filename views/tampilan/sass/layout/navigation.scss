@@ -1,0 +1,44 @@
+.navigation a{
+    font-weight: bold;
+    color: #d4af37;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.navigation a:hover {
+    color: lightyellow;
+}
+
+.navigation-img {
+    background-color: salmon;
+    color: white;
+}
+
+
+.card-img {
+    overflow-y: hidden;
+    position: relative;
+}
+
+.card-img-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s ease;
+}
+
+.card-img:hover .card-img-reveal {
+    opacity: 0;
+}
+
+.bg-second {    
+    height: 1600px;
+    width: 100%;
+    background-color: #eeeeee;
+    background-size: 100%;
+}
+
+
+.navbar-light .navbar-toggler {
+    background-color: white;
+}

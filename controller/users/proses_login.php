@@ -22,5 +22,5 @@ if ($result->num_rows > 0) {
             header("location:./../../views/users/page-user.php");
         }
 }else{
-    header("location:./../../views/users/login.php?pesan=gagal");
+    header("location:./../../tampilan/users/login.php?pesan=gagal");
 }

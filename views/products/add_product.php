@@ -43,7 +43,8 @@
     <?php } ?>
     <br>Stock:<br> <input type="number" name="stock"/><br>
     <br>Description:<br><textarea class="form-control" rows="3" id="textarea" name="description"></textarea>
-    <br>Foto</br><input type="file" name="foto">
+    <br>Foto</br><input type="file" name="foto[]" multiple="multiple">
+    <br>Harga:<br> <input type="number" name="harga"/><br>
     <br>
 <br><input type="submit" name="simpan">
 </form>

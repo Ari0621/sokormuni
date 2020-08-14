@@ -90,7 +90,8 @@ $list_sizes= $sizes->view()
         <br>Stock:<br> <input type="number" name="stock" value="<?php echo $product['product_stock']; ?>"><br>
         <br>Description:<br><textarea class="form-control" rows="3" id="textarea"
             name="description"><?php echo $product['product_description']; ?></textarea>
-         <br>Foto</br><input type="file" name="foto">
+         <br>Foto</br><input type="file" name="foto" multiple="multiple">
+         <br>Harga:<br> <input type="number" name="harga" value="<?php echo $product['product_harga'];?>"><br>
          <br>
         <br><input type="submit" name="simpan">
 

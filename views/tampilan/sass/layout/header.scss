@@ -1,0 +1,93 @@
+.header {
+    width: 100%;
+    height: 120px;
+    background-color: #071013;
+}
+.m-left {
+    margin-left: -105px;
+    margin-top: -8px;
+}
+/* buat icon */
+.m-right-70 {margin-left: 70px;}
+.m-right-120 {margin-left: 110px;}
+.m-right-180 {margin-left: 160px;}
+.m-right-240 {margin-left: 210px;}
+
+.b-1 {
+    box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+// itu untuk teksnya, gak harus warna, background, width, height, semua bisa.
+// teks navbar
+.navbar-light .navbar-nav .nav-link {
+    color: #d4af37;
+}
+
+// teks navbar dengan state active (menu aktif saat ini)
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: yellow;
+}
+
+// teks navbar saat :hover 
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: yellow;
+}
+
+.nav-respon {
+    background-color: grey;
+    width: 100%;
+}
+
+div#navbarSupportedContent {
+    background: none;
+    padding: 15px;
+}
+
+
+.navbar-collapse {
+    background-color: #071013;
+    padding: 15px;
+}
+
+.bg-pattern {
+    background: url('../images/pattern.jpg');
+    background-size: 7%;
+}
+
+// header buat homepage
+.main-header {
+    width: 100%;
+    height: 120px;
+    background: none;
+}
+
+
+.fixed-top {
+    position: absolute;
+}
+
+.search-size {
+    padding: 13px 150px 15px 20px;
+}
+
+
+@media only screen and (max-width: 991px) {
+    body {
+      padding-top: 110px;
+    }
+    .main-header {
+        background-color: #071013;
+    }
+    div#navbarSupportedContent {
+        background-color: #071013;
+    }
+  }
+@media only screen and (max-width: 2000px) {
+    .main-header {
+        background-color: none;
+    }
+      
+  }
+  

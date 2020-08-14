@@ -10,24 +10,26 @@ if (isset($_POST['simpan'])){
     $description     = $_POST['description'];
     $id              = $_POST['id'];
     $stock           = $_POST['stock'];
-    $foto            = $_FILES['foto']['name'];
-    $tmp             = $_FILES['foto']['tmp_name'];
+    $harga           = $_POST['harga'];
+    $jumlah = count($_FILES['foto']['name']);
+    if ($jumlah > 0) {
+        $fotobaru = array();
+        for ($i=0; $i < $jumlah; $i++) { 
+            $file_name = $_FILES['foto']['name'][$i];
+            $tmp_name = $_FILES['foto']['tmp_name'][$i];
+            $baru = date('dmYHis').$file_name;				
+            move_uploaded_file($tmp_name, "./../../Image/".$baru);
+            $fotobaru[$i] = $baru; 								
+        }
+        $coba  = $fotobaru[0]; 
+        $coba1 = $fotobaru[2];
+        $coba2  = $fotobaru[2];  
 
-    $fotobaru = date('dmYHis').$foto;
-    
-    $path = "./../../Image/".$fotobaru;
-
-
-    if(move_uploaded_file($tmp, $path)){
-
-    $product = new Product();
-
-    $result = $product->update($id, $name, $category_id, $material, $color, $size, $stock, $description, $fotobaru);
-    
-    if ($result) {
-        header("Location:./../../view/products/");
-    }else{
-        echo "Error: ";
+        $product = new Product();
+        $last_id = $product->insert($name, $category_id, $material, $color, $size, $stock, $description, $coba, $coba1, $coba2, $harga);
+        header("Location:./../../views/products/");			
     }
+    else{
+        echo "Gambar tidak ada";
     }
 }
