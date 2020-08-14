@@ -1,11 +1,5 @@
 <?php
 session_start();
-foreach ($_SESSION["keranjang"] as $id_produk => $jumlah);
-$id = $id_produk ;
-require "./../../controller/products/Product.php";
-$products = new Product();
-$product = $products->get_product($id);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,10 +69,15 @@ $product = $products->get_product($id);
                     <hr>
 
                 <!--isi cart-->
-                
-                <?php  
+                <?php
+                    require "./../../controller/products/Product.php";
+                    if (count($_SESSION["keranjang"]) > 0) {
+                        foreach ($_SESSION["keranjang"] as $id_produk => $jumlah){
+                        $id = $id_produk ;
+                        $products = new Product();
+                        $product = $products->get_product($id);
+                    
                 // print_r ($_SESSION);
-                if (!empty($product)) {
                 ?>
                 <div class="col-12">
                     <div class="card wish-list mb-4">
@@ -124,10 +123,11 @@ $product = $products->get_product($id);
                         </div>
                     </div>
                     <?php 
-    }else{
-        echo "data 0";
-    }
-    ?>
+                            }
+                    }else{
+                        echo "data 0";
+                    }
+                    ?>
                     <!-- tabel2 -->
                     <!-- <div class="card wish-list mb-4">
                         <div class="card-body">
