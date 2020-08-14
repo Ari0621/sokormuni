@@ -79,8 +79,6 @@ $product = $products->get_product($id);
                 <?php  
                 // print_r ($_SESSION);
                 if (!empty($product)) {
-                    foreach ($product as $row ) {
-                        var_dump ($product);
                 ?>
                 <div class="col-12">
                     <div class="card wish-list mb-4">
@@ -89,7 +87,7 @@ $product = $products->get_product($id);
                                 <div class="col-md-5 col-lg-3 col-xl-3">
                                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
                                         <img class="img-fluid w-100"
-                                            src=<?php echo "./../../Image/".$row['products_image1'];?>
+                                            src=<?php echo "./../../Image/".$product['products_image'];?>
                                             alt="Sample">
                                     </div>
                                 </div>
@@ -97,8 +95,8 @@ $product = $products->get_product($id);
                                     <div>
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                                <h5><?php echo $row['product_name'];?></h5>
-                                                <p class="mb-3 text-muted text-uppercase small">Shirt - <?php echo $row['product_name'];?></p>
+                                                <h5><?php echo $product['product_name'];?></h5>
+                                                <p class="mb-3 text-muted text-uppercase small">Shirt - <?php echo $product['product_name'];?></p>
                                                 <p class="mb-2 text-muted text-uppercase small">Color: maroon</p>
                                                 <p class="mb-3 text-muted text-uppercase small">Size: L</p>
                                             </div>
@@ -126,7 +124,6 @@ $product = $products->get_product($id);
                         </div>
                     </div>
                     <?php 
-            }
     }else{
         echo "data 0";
     }
