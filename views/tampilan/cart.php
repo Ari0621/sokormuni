@@ -93,7 +93,7 @@ if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"]))
                         $supharga = $product['products_harga']*$jumlah;
                         $totalharga = $cobaini+$supharga;
                     
-                //  print_r ($_SESSION);
+                //  print_r ($_SESSION); 
                 ?>
                 <div class="col-12">
                     <div class="card wish-list mb-4">
