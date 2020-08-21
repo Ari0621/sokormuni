@@ -25,42 +25,52 @@ $list_sizes= $sizes->view();
 <body class="bg-pattern">
 
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top header">
-        <div></div><img src="images/sokormuni logo.png" alt=""></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto ml-4 fs-17 f-bold">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ml-2" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Promo
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Give Away</a>
-                        <a class="dropdown-item" href="#">Discount</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ml-1" href="#">Size</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <div class="fs-24 ml-3">
-                    <a class="fa fa-search fs-24 btn-icon" href=""></a>
-                    <a class="fa fa-user-circle ml-2 btn-icon" href=""></a>
-                    <a class="fa fa-shopping-cart ml-2 btn-icon" href=""></a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top header ">
+                <div></div><img src="images/sokormuni logo.png" alt=""></div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto ml-4 fs-17 f-bold">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ml-2" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Promo
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Give Away</a>
+                                <a class="dropdown-item" href="#">Discount</a>
+                            </div>
+                        </li>
+                        <?php if (isset($_SESSION["pelanggan"])){?>
+                        <li class="nav-item">
+                            <a class="nav-link ml-1" href="login.php">Login</a>
+                        </li>
+                        <?php }else{?>
+                        <li class="nav-item">
+                            <a class="nav-link ml-1" href="logout.php">Logout</a>
+                        </li>
+                        <?php }?>
+                        <li class="nav-item">
+                            <a class="nav-link ml-1" href="about.php">About Us</a>
+                        </li>
+                        
+                  </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <div class="fs-24 ml-3">
+                            <a class="fa fa-search fs-24 btn-icon" href=""></a>
+                            <a class="fa fa-user-circle ml-2 btn-icon" href=""></a>
+                            <a class="fa fa-shopping-cart ml-2 btn-icon" href=""></a>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-    </nav>
+            </nav>
         
     <!--kolom detail produk-->
     <div class="container p-top-140 tes-bg b-1">
@@ -114,7 +124,7 @@ $list_sizes= $sizes->view();
                       <p>- anti bakteri</p>
                       <p>- serap sinar uv 20%</p>
                   </div>
-                  <a href='cart.php?id=<?php echo $product["product_id"]; ?>' class="btn btn-color mt-3"> <i class="fa fa-shopping-cart fs-15" aria-hidden="true"> Tambah ke Keranjang</i></a>
+                  <a href='beli.php?id=<?php echo $product["product_id"]; ?>' class="btn btn-color mt-3"> <i class="fa fa-shopping-cart fs-15" aria-hidden="true"> Tambah ke Keranjang</i></a>
 
             </div>
         </div>

@@ -11,16 +11,19 @@ $result = $mysqli->query($sql);
 if ($result->num_rows > 0) { 
     $data= $result->fetch_assoc();
         if($data['level']=="Admin"){
-            $_SESSION['username'] = $data["username"];
-            $_SESSION['id'] = $data["id"];
-		    $_SESSION['level'] = "Admin";
-            header("location:./../../views/users/page-admin.php");
+            $_SESSION['admin'] = $data;
+            echo "<script>alert('Admin sukses login');</script>";
+            echo "<script>location='./../../Admin/index.php';</script>";
         }else if($data['level']=="User"){
-            $_SESSION['username'] = $data["username"];
-            $_SESSION['id'] = $data["id"];
-            $_SESSION['level'] = "User";
-            header("location:./../../views/users/page-user.php");
+            $_SESSION['pelanggan'] = $data;
+            echo "<script>alert('anda sukses login');</script>";
+            if(isset($_SESSION['keranjang']) or !empty($_SESSION['keranjang'])){
+                echo "<script>location='./../../views/tampilan/index.php';</script>";
+            }else{
+                echo "<script>location='./../../views/tampilan/checkout.php';</script>";
+            }
         }
 }else{
-    header("location:./../../tampilan/users/login.php?pesan=gagal");
+    echo "<script>alert('anda gagal login silakan periksa akun anda');</script>";
+    echo "<script>location='./../../tampilan/users/login.php?pesan=gagal';</script>";
 }

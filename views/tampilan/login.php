@@ -42,7 +42,7 @@
                             <a class="nav-link ml-1" href="#">Size</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ml-1" href="#">About Us</a>
+                            <a class="nav-link ml-1" href="about.php">About Us</a>
                         </li>
                   </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -63,7 +63,7 @@
                 <form action="./../../controller/users/proses_login.php" method="post">
                     <div class="form-group column-login">
                         <h3 class="mb-3 f-bold text-center">Customer Login</h3>
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Username</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="Enter email" name="username">
                         <small id="emailHelp" class="form-text text-muted"></small>

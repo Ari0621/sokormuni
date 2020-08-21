@@ -3,7 +3,7 @@
 class Sizes {
 
     function view() {
-        require_once "./../../config/Database.php";
+        require_once "./../config/Database.php";
 
         $db = new Database();
 

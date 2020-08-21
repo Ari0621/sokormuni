@@ -42,7 +42,7 @@
                             <a class="nav-link ml-1" href="#">Size</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ml-1" href="#">About Us</a>
+                            <a class="nav-link ml-1" href="about.php">About Us</a>
                         </li>
                   </ul>
                     <form class="form-inline my-2 my-lg-0">

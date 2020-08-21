@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto ml-4 fs-17 f-bold">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ml-2" href="#" id="navbarDropdown" role="button"
@@ -35,12 +35,18 @@
                             <a class="dropdown-item" href="#">Discount</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ml-1" href="#">Size</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ml-1" href="#">About Us</a>
-                    </li>
+                    <?php if (isset($_SESSION["pelanggan"])){?>
+                        <li class="nav-item">
+                            <a class="nav-link ml-1" href="logout.php">Logout</a>
+                        </li>
+                        <?php }else{?>
+                        <li class="nav-item">
+                            <a class="nav-link ml-1" href="login.php">Login</a>
+                        </li>
+                        <?php }?>
+                        <li class="nav-item">
+                            <a class="nav-link ml-1" href="about.php">About Us</a>
+                        </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
